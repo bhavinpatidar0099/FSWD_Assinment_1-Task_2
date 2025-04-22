@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Admin Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Mobile Sidebar Toggle Button -->
+  <div class="md:hidden flex items-center justify-between p-4 bg-blue-900 text-white">
+    <div class="text-xl font-bold">Admin Dashboard</div>
+    <button id="menu-toggle" class="focus:outline-none">
+      ☰
+    </button>
+  </div>
+
+  <div class="flex h-screen overflow-hidden">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed z-30 inset-y-0 left-0 w-64 bg-blue-900 text-white transform -translate-x-full md:relative md:translate-x-0 transition-transform duration-200 ease-in-out">
+      <div class="p-4 text-2xl font-bold hidden md:block">Admin Dashboard</div>
+      <nav class="mt-4">
+        <a href="#" class="block py-2.5 px-4 hover:bg-blue-700">Dashboard</a>
+        <a href="#" class="block py-2.5 px-4 hover:bg-blue-700">Users</a>
+        <a href="#" class="block py-2.5 px-4 hover:bg-blue-700">Sales</a>
+        <a href="#" class="block py-2.5 px-4 hover:bg-blue-700">Analytics</a>
+        <a href="#" class="block py-2.5 px-4 hover:bg-blue-700">Settings</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-4 md:p-6 overflow-y-auto md:ml-64">
+      <h1 class="text-3xl font-semibold mb-6">Dashboard Overview</h1>
+
+      <!-- Statistics Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 shadow rounded-lg">
+          <h2 class="text-lg font-semibold mb-2">Total Users</h2>
+          <p class="text-4xl font-bold">1,245</p>
+        </div>
+        <div class="bg-white p-6 shadow rounded-lg">
+          <h2 class="text-lg font-semibold mb-2">Monthly Revenue</h2>
+          <p class="text-4xl font-bold">$18,720</p>
+        </div>
+        <div class="bg-white p-6 shadow rounded-lg">
+          <h2 class="text-lg font-semibold mb-2">New Orders</h2>
+          <p class="text-4xl font-bold">356</p>
+        </div>
+        <div class="bg-white p-6 shadow rounded-lg">
+          <h2 class="text-lg font-semibold mb-2">Website Traffic</h2>
+          <p class="text-4xl font-bold">5,678</p>
+        </div>
+      </div>
+
+      <!-- Recent Tasks -->
+      <div class="mt-10">
+        <h2 class="text-2xl font-semibold mb-4">Recent Tasks</h2>
+        <div class="bg-white p-6 shadow rounded-lg">
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Complete design review by Feb 15</li>
+            <li>Prepare sales report for the monthly meeting</li>
+            <li>Update user database</li>
+            <li>Fix login page bug</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Toggle sidebar on mobile
+    const toggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+
+    toggle.addEventListener('click', () => {
+      sidebar.classList.toggle('-translate-x-full');
+    });
+  </script>
+</body>
+</html>
